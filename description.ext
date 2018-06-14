@@ -1,0 +1,8 @@
+author = "xetra11";
+onLoadName = "Recon Mod v0.1";
+onLoadMission = "Welcome to Recon Mod 0.1";
+disabledAI = 1;
+enableDebugConsole = 2;
+allowFunctionsRecompile = 1;
+
+#include "Functions.hpp"
