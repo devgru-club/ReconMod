@@ -2,10 +2,7 @@
 //[playerSide, 'HQ'] commandChat 'Recon camp successfully build';
 
 params ["_target", "_caller"];
-private ["_message","_tentType", "_tent", "_campComposition"];
-
-_tentType = "Land_TentDome_F";
-_sleepingBagType = "Land_Sleeping_bag_F";
+private ["_message", "_campComposition"];
 
 _message = format['%1 is building up a campsite', name _caller];
 hint _message;
