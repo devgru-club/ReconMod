@@ -2,7 +2,7 @@
 //[playerSide, 'HQ'] commandChat 'Recon camp successfully build';
 
 params ["_target", "_caller"];
-private ["_message", "_campComposition"];
+private ["_message", "_camp", "_campComposition", "_backpackHolder", "_campHolder"];
 
 _message = format['%1 is building up a campsite', name _caller];
 hint _message;
@@ -29,8 +29,17 @@ _campComposition = [
 ];
 
 'constructing camp...' call ReconMod_fnc_log;
-[position _caller, 0, _campComposition] call BIS_fnc_ObjectsMapper;
+_camp = [position _caller, 0, _campComposition] call BIS_fnc_ObjectsMapper;
 'camp build!' call ReconMod_fnc_log;
+
+// _message = format['camp holder: %1', objectParent _camp];
+// _message call ReconMod_fnc_log;
 
 hint 'recon camp has been built up';
 
+_message = format['deleting campsite building item: %1', typeOf _target];
+_message call ReconMod_fnc_log;
+
+_backpackHolder = objectParent _target;
+clearBackpackCargoGlobal _backpackHolder;
+deleteVehicle _backpackHolder;
