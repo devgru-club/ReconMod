@@ -32,6 +32,8 @@ _campComposition = [
 _camp = [position _caller, 0, _campComposition] call BIS_fnc_ObjectsMapper;
 'camp build!' call ReconMod_fnc_log;
 
+{_x addAction ['pack camp', ReconMod_fnc_packCampsiteItem, _camp];} forEach _camp;
+
 // _message = format['camp holder: %1', objectParent _camp];
 // _message call ReconMod_fnc_log;
 
