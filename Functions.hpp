@@ -3,6 +3,7 @@ class cfgFunctions{
         class Camp{
             file = "camp";
             class buildCampsite {};
+            class packCampsiteItem {};
         }
         class Init{
             file = "init";
