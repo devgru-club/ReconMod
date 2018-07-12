@@ -35,10 +35,11 @@ sleep 8;
 _camp = [position _caller, 0, _campComposition] call BIS_fnc_ObjectsMapper;
 'camp build!' call ReconMod_fnc_log;
 
-// adding camp composition and backpack item (_target) as arguments to the pack action
-{_x addAction ['pack camp', ReconMod_fnc_packCampsiteItem, [_camp, objectParent _target]];} forEach _camp;
+hint 'add respawn position: Recon Camp';
+_respawnPosition = [side _caller, getPos _caller, 'Recon Camp'] call BIS_fnc_addRespawnPosition;
 
-hint 'recon camp has been built up';
+// adding camp composition and backpack item (_target) as arguments to the pack action
+{_x addAction ['pack camp', ReconMod_fnc_packCampsiteItem, [_camp, objectParent _target, _respawnPosition]];} forEach _camp;
 
 _message = format['hiding campsite building item: %1', typeOf _target];
 _message call ReconMod_fnc_log;
