@@ -36,7 +36,7 @@ _camp = [position _caller, 0, _campComposition] call BIS_fnc_ObjectsMapper;
 'camp build!' call ReconMod_fnc_log;
 
 // adding camp composition and backpack item (_target) as arguments to the pack action
-{_x addAction ['pack camp', ReconMod_fnc_packCampsiteItem, [_camp, _target]];} forEach _camp;
+{_x addAction ['pack camp', ReconMod_fnc_packCampsiteItem, [_camp, objectParent _target]];} forEach _camp;
 
 hint 'recon camp has been built up';
 
