@@ -29,7 +29,9 @@ _campComposition = [
 ];
 
 'constructing camp...' call ReconMod_fnc_log;
+
 sleep 8;
+
 _camp = [position _caller, 0, _campComposition] call BIS_fnc_ObjectsMapper;
 'camp build!' call ReconMod_fnc_log;
 
