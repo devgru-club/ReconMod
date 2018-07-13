@@ -5,4 +5,4 @@ disabledAI = 1;
 enableDebugConsole = 2;
 allowFunctionsRecompile = 1;
 
-#include "Functions.hpp"
+#include "CfgFunctions.hpp"
