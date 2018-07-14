@@ -7,6 +7,7 @@ xcopy utils addon\utils /S /I /Y
 
 copy CfgFunctions.hpp addon
 copy CfgVehicles.hpp addon
+copy CfgPatches.hpp addon
 
 copy config.cpp addon
 
