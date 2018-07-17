@@ -1,8 +1,9 @@
 class CfgPatches {
     class ReconMod {
-        name = "Recon Mod v0.1";
-        author = {"xetra11"};
-        units[] = {"ReconMod_Camp_Backpack"};
+        author = "xetra11";
+        name = "Recon Mod";
+        version = "1.0";
+        units[] = {};
         weapons[] = {};
         requiredVersion = 1.0;
         requiredAddons[] = {};

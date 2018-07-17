@@ -4,6 +4,7 @@ if not exist "@ReconMod/addons" mkdir "@ReconMod/addons"
 xcopy camp addon\camp /S /I /Y
 xcopy init addon\init /S /I /Y
 xcopy utils addon\utils /S /I /Y
+xcopy data addon\data /S /I /Y
 
 copy CfgFunctions.hpp addon
 copy CfgVehicles.hpp addon

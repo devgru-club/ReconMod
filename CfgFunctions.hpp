@@ -1,17 +1,17 @@
-class cfgFunctions{
+class CfgFunctions{
     class ReconMod{
         class Camp{
-            file = "camp";
+            file = "reconmod\camp";
             class buildCampsite {};
             class packCampsiteItem {};
         }
         class Init{
-            file = "init";
+            file = "reconmod\init";
             class init{preInit = 1;};
             class backpackInit {};
         }
         class Utils{
-            file = "utils";
+            file = "reconmod\utils";
             class log{};
         }
     }
