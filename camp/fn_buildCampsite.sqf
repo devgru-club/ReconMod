@@ -2,15 +2,14 @@
 //[playerSide, 'HQ'] commandChat 'Recon camp successfully build';
 
 params ["_target", "_caller"];
-private ["_message", "_camp", "_campComposition", "_backpackHolder", "_campHolder"];
 
-_message = format['%1 is building up a campsite', name _caller];
+private _message = format['%1 is building up a campsite', name _caller];
 hint _message;
 
 'playing build up animation' call ReconMod_fnc_log;
 _caller playMove "AinvPknlMstpSnonWnonDnon_medicUp3";
 
-_campComposition = [
+private _campComposition = [
 	["Land_FirePlace_F",[0.407715,-0.0605469,0.00431442],0,1,0,[],"","",true,false],
 	["Land_WoodenLog_F",[1.30078,-1.04712,4.19617e-005],0,1,0,[],"","",true,false],
 	["Land_Ground_sheet_folded_khaki_F",[-0.0664063,1.74048,8.01086e-005],260.778,1,0,[],"","",true,false],
@@ -32,11 +31,11 @@ _campComposition = [
 
 sleep 8;
 
-_camp = [position _caller, 0, _campComposition] call BIS_fnc_ObjectsMapper;
+private _camp = [position _caller, 0, _campComposition] call BIS_fnc_ObjectsMapper;
 'camp build!' call ReconMod_fnc_log;
 
 hint 'add respawn position: Recon Camp';
-_respawnPosition = [side _caller, getPos _caller, 'Recon Camp'] call BIS_fnc_addRespawnPosition;
+private _respawnPosition = [side _caller, getPos _caller, 'Recon Camp'] call BIS_fnc_addRespawnPosition;
 
 // adding camp composition and backpack item (_target) as arguments to the pack action
 {_x addAction ['pack camp', ReconMod_fnc_packCampsiteItem, [_camp, objectParent _target, _respawnPosition]];} forEach _camp;
