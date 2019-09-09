@@ -6,7 +6,5 @@
 
 params ["_backpackItem"];
 
-format['init backpack: %1', typeOf _backpackItem] call ReconMod_fnc_log;
-_backpackItem addAction ["Build Recon Camp", ReconMod_fnc_buildCampsite];
-
-
+format['init backpack: %1', typeOf _backpackItem] call bivouac_fnc_log;
+_backpackItem addAction ["Build Bivouac Camp", bivouac_fnc_buildCampsite];

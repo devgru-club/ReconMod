@@ -6,5 +6,4 @@
 
 params['_logMessage'];
 
-diag_log format ['%1 %2', reconModName, _logMessage];
-
+diag_log format ['%1 %2', bivouacName, _logMessage];

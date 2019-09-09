@@ -1,5 +1,5 @@
 if not exist addon mkdir addon
-if not exist "@ReconMod/addons" mkdir "@ReconMod/addons"
+if not exist "@bivouac/addons" mkdir "@bivouac/addons"
 
 xcopy camp addon\camp /S /I /Y
 xcopy init addon\init /S /I /Y

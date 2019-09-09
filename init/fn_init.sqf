@@ -5,6 +5,6 @@
 */
 
 
-private _initMessage = 'Init Recon Mod v0.1';
+private _initMessage = 'Init Bivouac v1.0';
 
-_initMessage call ReconMod_fnc_log;
+_initMessage call bivouac_fnc_log;

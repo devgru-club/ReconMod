@@ -1,7 +1,7 @@
 class CfgPatches {
-    class ReconMod {
-        author = "xetra11";
-        name = "Recon Mod";
+    class bivouac {
+        author = "diveyez";
+        name = "Bivouac";
         version = "1.0";
         units[] = {};
         weapons[] = {};

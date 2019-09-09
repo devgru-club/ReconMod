@@ -3,10 +3,10 @@
 
 params ["_target", "_caller"];
 
-private _message = format['%1 is building up a campsite', name _caller];
+private _message = format['%1 is building up a Bivouac Camp', name _caller];
 hint _message;
 
-'playing build up animation' call ReconMod_fnc_log;
+'playing build up animation' call bivouac_fnc_log;
 _caller playMove "AinvPknlMstpSnonWnonDnon_medicUp3";
 
 private _campComposition = [
@@ -27,20 +27,20 @@ private _campComposition = [
 	["Land_TentDome_F",[3.51807,3.35718,0.00638962],320.122,1,0,[],"","",true,false]
 ];
 
-'constructing camp...' call ReconMod_fnc_log;
+'constructing camp...' call bivouac_fnc_log;
 
 sleep 8;
 
 private _camp = [position _caller, 0, _campComposition] call BIS_fnc_ObjectsMapper;
-'camp build!' call ReconMod_fnc_log;
+'Bivouac Camp Build!' call bivouac_fnc_log;
 
-hint 'add respawn position: Recon Camp';
-private _respawnPosition = [side _caller, getPos _caller, 'Recon Camp'] call BIS_fnc_addRespawnPosition;
+hint 'Add respawn position: Recon Bivouac';
+private _respawnPosition = [side _caller, getPos _caller, 'Recon Bivouac'] call BIS_fnc_addRespawnPosition;
 
 // adding camp composition and backpack item (_target) as arguments to the pack action
-{_x addAction ['pack camp', ReconMod_fnc_packCampsiteItem, [_camp, objectParent _target, _respawnPosition]];} forEach _camp;
+{_x addAction ['Break Camp (Bivouac)', bivouac_fnc_packCampsiteItem, [_camp, objectParent _target, _respawnPosition]];} forEach _camp;
 
-_message = format['hiding campsite building item: %1', typeOf _target];
-_message call ReconMod_fnc_log;
+_message = format['Hiding campsite building item: %1', typeOf _target];
+_message call bivouac_fnc_log;
 
 objectParent _target hideObjectGlobal true;
